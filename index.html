@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=poppins"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1 class="tittle">Sign Up</h1>
+        <div class="underline"></div>
+        <form>
+          <div class="input-group">
+            <div class="input-field nameField">
+              <i class="bi bi-person-fill"></i>
+              <input type="text" placeholder="Name" />
+            </div>
+            <!-----end of input field--->
+            <div class="input-field">
+              <i class="bi bi-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <!-----end of input field--->
+            <div class="input-field">
+              <i class="bi bi-key-fill"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <!-----end of input field--->
+            <p>
+              <span class="text">Password suggestion</span>
+              <a href="">Click here</a>
+            </p>
+          </div>
+          <!-----end of input group--->
+          <div class="Btn-field">
+            <button type="button signUpBtn" class="signUpBtn">Sign up</button>
+            <button type="button" class="disabeld signInBtn">Sign in</button>
+          </div>
+          <!---Btn field end-->
+        </form>
+      </div>
+      <!---end form box-->
+    </div>
+    <!-----end container---->
+    <!-- <script src="script.js"></script> -->
+    <script>
+      let signUpBtn = document.querySelector(".signUpBtn");
+      let signInBtn = document.querySelector(".signInBtn");
+      let nameField = document.querySelector(".nameField");
+      let tittle = document.querySelector(".tittle");
+      let underline = document.querySelector(".underline");
+      let text = document.querySelector(".text");
+
+      signInBtn.addEventListener("click", myFunction);
+      signUpBtn.addEventListener("click", newFunction);
+      function myFunction() {
+        nameField.style.maxHeight = "0";
+        tittle.innerHTML = "Sign In";
+        text.innerHTML = "Lost Password";
+        signUpBtn.classList.add("disabeld");
+        signInBtn.classList.remove("disabeld");
+        underline.style.transform = "translateX(35px)";
+      }
+      function newFunction() {
+        nameField.style.maxHeight = "60px";
+        tittle.innerHTML = "Sign Up";
+        text.innerHTML = "Password Suggestion";
+        signUpBtn.classList.remove("disabeld");
+        signInBtn.classList.add("disabeld");
+        underline.style.transform = "translateX(0)";
+      }
+    </script>
+  </body>
+</html>
